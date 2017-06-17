@@ -1,0 +1,25 @@
+// Available variables which can be used inside of strings.
+// ${workspaceRoot}: the root folder of the team        
+// ${file}: the current opened file                     
+// ${fileBasename}: the current opened file's basename 
+// ${fileDirname}: the current opened file's dirname    
+// ${fileExtname}: the current opened file's extension  
+// ${cwd}: the current working directory of the spawned process
+{
+    "version": "0.2.0",
+    "configurations": [{
+        "name": "C++ Launch (GDB)", // Dubug name
+        "type": "cppdbg", // noly cppdbg
+        "request": "launch", // launch or attach
+        "targetArchitecture": "x64", // x86, arm, arm64, mips, x64, amd64, x86_64
+        "program": "${workspaceRoot}/a.exe", // Need to launch file
+
+        "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe", // miDebugger path, need to download MinGW or Cygwin
+
+        "args": [], // default
+        "stopAtEntry": false, // Program is stopped at the first line when began debug mode.
+        "cwd": "${workspaceRoot}", // default 
+        "externalConsole": true, // Need openning external terminal
+        "preLaunchTask": "g++"　// c++:g++, c:gcc
+    }]
+}
